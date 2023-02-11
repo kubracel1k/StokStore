@@ -1,0 +1,33 @@
+﻿@using StokStore.Models.Entity;
+@model List<tbl_satıs>
+@{
+    ViewBag.Title = "Satilan";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<table id="tbl1" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Satış ID</th>
+            <th>Müşteri</th>
+            <th>Ürün</th>
+            <th>Fiyat</th>
+            <th>Adet</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <th>@urn.SATISID</th>
+                <td>@urn.MUSTERI</td>
+                <td>@urn.URUN</td>
+                <td>@urn.FIYAT</td>
+                <td>@urn.ADET</td>
+                <td><a href="/Satis/Sil/@urn.SATISID" class="btn btn-danger">Sil</a></td>             
+            </tr>
+        }
+    </tbody>
+</table>
+
+
